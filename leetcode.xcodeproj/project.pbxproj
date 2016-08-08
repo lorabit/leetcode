@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4A9663E61D539AEC00BFC8F0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A9663E51D539AEC00BFC8F0 /* main.cpp */; };
-		4A9663F11D54AF5400BFC8F0 /* word-break.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A9663EF1D54AF5400BFC8F0 /* word-break.cpp */; };
 		4A9663F61D54D5C600BFC8F0 /* 3sum.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A9663F51D54D5C600BFC8F0 /* 3sum.hpp */; };
 /* End PBXBuildFile section */
 
@@ -27,11 +26,11 @@
 /* Begin PBXFileReference section */
 		4A9663E21D539AEC00BFC8F0 /* leetcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = leetcode; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A9663E51D539AEC00BFC8F0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		4A9663EF1D54AF5400BFC8F0 /* word-break.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "word-break.cpp"; sourceTree = "<group>"; };
 		4A9663F01D54AF5400BFC8F0 /* word-break.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "word-break.hpp"; sourceTree = "<group>"; };
 		4A9663F31D54AFD300BFC8F0 /* word-break-ii.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "word-break-ii.hpp"; sourceTree = "<group>"; };
 		4A9663F51D54D5C600BFC8F0 /* 3sum.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = 3sum.hpp; sourceTree = "<group>"; };
 		4A9663F71D58A71000BFC8F0 /* search-in-rotated-sorted-array.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "search-in-rotated-sorted-array.hpp"; sourceTree = "<group>"; };
+		4A9663F81D58B72F00BFC8F0 /* find-minimum-in-rotated-sorted-array.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "find-minimum-in-rotated-sorted-array.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +64,11 @@
 			isa = PBXGroup;
 			children = (
 				4A9663E51D539AEC00BFC8F0 /* main.cpp */,
-				4A9663EF1D54AF5400BFC8F0 /* word-break.cpp */,
 				4A9663F01D54AF5400BFC8F0 /* word-break.hpp */,
 				4A9663F31D54AFD300BFC8F0 /* word-break-ii.hpp */,
 				4A9663F51D54D5C600BFC8F0 /* 3sum.hpp */,
 				4A9663F71D58A71000BFC8F0 /* search-in-rotated-sorted-array.hpp */,
+				4A9663F81D58B72F00BFC8F0 /* find-minimum-in-rotated-sorted-array.hpp */,
 			);
 			path = leetcode;
 			sourceTree = "<group>";
@@ -132,7 +131,6 @@
 			files = (
 				4A9663F61D54D5C600BFC8F0 /* 3sum.hpp in Sources */,
 				4A9663E61D539AEC00BFC8F0 /* main.cpp in Sources */,
-				4A9663F11D54AF5400BFC8F0 /* word-break.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,13 +7,11 @@
 //
 
 #include <iostream>
-
 #include <vector>
 #include <unordered_set>
-
 #include "word-break-ii.hpp"
-
 #include "search-in-rotated-sorted-array.hpp"
+#include "find-minimum-in-rotated-sorted-array.hpp"
 
 
 
@@ -21,7 +19,7 @@ using namespace std;
 
 int
 main(int argc, const char * argv[]) {
-    Test33 test = Test33();
+    Test153 test = Test153();
     test.testCase1();
     test.testCase2();
     test.testCase3();
