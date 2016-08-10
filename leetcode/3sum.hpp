@@ -12,27 +12,14 @@
 #include <vector>
 #include <sys/time.h>
 
-bool tripleComparator(vector<int>& trip1, vector<int>& trip2){
-    sort(trip1.begin(),trip1.end());
-    sort(trip2.begin(),trip2.end());
-    vector<int>::iterator iter = trip1.begin();
-    vector<int>::iterator iter2 = trip2.begin();
-    for (; iter != trip1.end() ; iter++, iter2++) {
-        if(*iter>*iter2)
-            return true;
-        if(*iter<*iter2)
-            return false;
-    }
-    return true;
-}
 
 
 
-class Solution15 {
+
+// O(n^2logn) algorithm improved from naive O(n^3) algorithm with binary search.
+class Solution15BinarySearch {
     
 public:
-    
-    
     vector<vector<int>> threeSum(vector<int>& nums) {
         vector<vector<int>> result;
         if(nums.size() == 0) return result;
@@ -57,10 +44,10 @@ public:
         }
         int n = (int)filteredNums.size();
         vector<vector<int>> candidates;
-        for(int i = 0; i<n; i++){
+        for(int i = 0; i<n-2; i++){
             if(filteredNums[i]>0) break;
             if(i>0 && filteredNums[i] == filteredNums[i-1]) continue;
-            for(int j = i+1; j<n ; j++){
+            for(int j = i+1; j<n-1 ; j++){
                 if(j>i+1 && filteredNums[j] == filteredNums[j-1]) continue;
                 int c = filteredNums[i] + filteredNums[j];
                 if( c>0) break;
@@ -84,6 +71,7 @@ public:
                     if(s == 0){
                         vector<int> triplet = {filteredNums[i],filteredNums[j],filteredNums[k]};
                         candidates.push_back(triplet);
+                        break;
                     }
                 }
             }
@@ -92,7 +80,75 @@ public:
     }
 };
 
+// O(n^2) algorithm
+class Solution15 {
+    
+public:
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        vector<vector<int>> result;
+        if(nums.size() <= 2) return result;
+        vector<int> sortedNums;
+        sortedNums.insert(sortedNums.end(), nums.begin(), nums.end());
+        sort(sortedNums.begin(), sortedNums.end());
+        vector<int> filteredNums;
+        vector<int>::iterator iter = sortedNums.begin();
+        int last = *iter;
+        int lastCount = 1;
+        filteredNums.push_back(*iter++);
+        for (; iter != sortedNums.end(); iter++) {
+            if(*iter!=last){
+                filteredNums.push_back(*iter);
+                last = *iter;
+                lastCount = 1;
+            }else{
+                ++lastCount;
+                if((lastCount<=2)||(lastCount<=3 && *iter==0))
+                    filteredNums.push_back(*iter);
+            }
+        }
+        int n = (int)filteredNums.size();
+        vector<vector<int>> candidates;
+        
+        for(int i = 0; i < n-2; i++){
+            int l = i + 1;
+            int r = n - 1;
+            while(l<r){
+                int s  = filteredNums[l] + filteredNums[r] + filteredNums[i];
+                if(s == 0){
+                    candidates.push_back({filteredNums[l],filteredNums[r],filteredNums[i]});
+                    l++;
+                    while(l<=r && filteredNums[l]==filteredNums[l-1])l++;
+                    r--;
+                    while(l<=r && filteredNums[r]==filteredNums[r+1])r--;
+                }else{
+                    if(s>0)
+                        r--;
+                    else{
+                        l++;
+                    }
+                }
+            }
+            while(i+1<n && filteredNums[i+1] == filteredNums[i]) i++;
+        }
+        
+        return candidates;
+    }
+};
 
+
+bool tripleComparator(vector<int>& trip1, vector<int>& trip2){
+    sort(trip1.begin(),trip1.end());
+    sort(trip2.begin(),trip2.end());
+    vector<int>::iterator iter = trip1.begin();
+    vector<int>::iterator iter2 = trip2.begin();
+    for (; iter != trip1.end() ; iter++, iter2++) {
+        if(*iter>*iter2)
+            return true;
+        if(*iter<*iter2)
+            return false;
+    }
+    return true;
+}
 
 
 class Test15 {
