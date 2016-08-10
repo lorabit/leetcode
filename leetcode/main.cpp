@@ -10,16 +10,14 @@
 #include <vector>
 #include <unordered_set>
 #include "word-break-ii.hpp"
-#include "search-in-rotated-sorted-array.hpp"
 #include "find-minimum-in-rotated-sorted-array.hpp"
+#include "3sum.hpp"
 
 
+#include "search-in-rotated-sorted-array.hpp"
 
-using namespace std;
-
-int
-main(int argc, const char * argv[]) {
-    Test153 test = Test153();
+int main(int argc, const char * argv[]) {
+    Test15 test = Test15();
     test.testCase1();
     test.testCase2();
     test.testCase3();
@@ -27,7 +25,7 @@ main(int argc, const char * argv[]) {
     test.testCase5();
     test.testCase6();
     test.testCase7();
-    test.testCase8();
-    test.testCase9();
+//    test.testCase8();
+//    test.testCase9();
     return 0;
 }
